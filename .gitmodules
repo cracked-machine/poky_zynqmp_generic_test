@@ -1,0 +1,12 @@
+[submodule "layers/poky"]
+	path = layers/poky
+	url = https://github.com/yoctoproject/poky.git
+[submodule ".devcontainer/embedded_linux_dockerfiles"]
+	path = .devcontainer/embedded_linux_dockerfiles
+	url = https://github.com/cracked-machine/embedded_linux_dockerfiles.git
+[submodule "layers/meta-xilinx"]
+	path = layers/meta-xilinx
+	url = https://github.com/Xilinx/meta-xilinx
+[submodule "layers/meta-xilinx-tools"]
+	path = layers/meta-xilinx-tools
+	url = https://github.com/Xilinx/meta-xilinx-tools
