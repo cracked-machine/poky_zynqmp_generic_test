@@ -1,0 +1,16 @@
+# POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+POKY_BBLAYERS_CONF_VERSION = "2"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+  /workspaces/poky_zynqmp_generic_test/layers/poky/meta \
+  /workspaces/poky_zynqmp_generic_test/layers/meta-xilinx/meta-xilinx-core \
+  /workspaces/poky_zynqmp_generic_test/layers/meta-xilinx/meta-xilinx-standalone \  
+  /workspaces/poky_zynqmp_generic_test/layers/meta-xilinx-tools \
+  /workspaces/poky_zynqmp_generic_test/layers/poky/meta-poky \
+  /workspaces/poky_zynqmp_generic_test/layers/poky/meta-yocto-bsp \
+  /workspaces/poky_zynqmp_generic_test/layers/meta-test \
+  "
