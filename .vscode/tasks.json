@@ -1,0 +1,24 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "options": {
+        "env": {
+            "TEMPLATECONF": "${workspaceFolder}/layers/meta-test/conf/templates/zynqmp_generic"
+        }
+    },
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": [
+                "rm -rf ${workspaceFolder}/build/* &&",
+                "cd ${workspaceFolder}/layers/poky &&",
+                "source oe-init-build-env ${workspaceFolder}/build &&",
+                "exec bash"
+            ],
+            "group": "build",           
+            "detail": "Use 'bitbake core-image-minimal' to build"
+        }
+    ]
+}
