@@ -8,6 +8,7 @@ BBFILES ?= ""
 BBLAYERS ?= " \
   /workspaces/poky_zynqmp_generic_test/layers/poky/meta \
   /workspaces/poky_zynqmp_generic_test/layers/meta-xilinx/meta-xilinx-core \
+  /workspaces/poky_zynqmp_generic_test/layers/meta-xilinx/meta-xilinx-bsp \
   /workspaces/poky_zynqmp_generic_test/layers/meta-xilinx/meta-xilinx-standalone \  
   /workspaces/poky_zynqmp_generic_test/layers/meta-xilinx-tools \
   /workspaces/poky_zynqmp_generic_test/layers/poky/meta-poky \

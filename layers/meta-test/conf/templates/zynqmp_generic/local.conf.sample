@@ -1,5 +1,5 @@
 
-MACHINE = "zynqmp-generic"
+MACHINE = "zcu104-zynqmp"
 DISTRO ?= "poky"
 
 DL_DIR ?= "${TOPDIR}/../downloads"
@@ -51,9 +51,9 @@ BB_DISKMON_DIRS ??= "\
     ABORT,/tmp,10M,1K"
 
 
-BB_SIGNATURE_HANDLER = "OEEquivHash"
-BB_HASHSERVE = "auto"
-BB_HASHSERVE_UPSTREAM = "hashserv.yocto.io:80"
+# BB_SIGNATURE_HANDLER = "OEEquivHash"
+# BB_HASHSERVE = "auto"
+# BB_HASHSERVE_UPSTREAM = "hashserv.yocto.io:80"
 
 
 PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
@@ -63,3 +63,6 @@ CONF_VERSION = "2"
 
 
 LICENSE_FLAGS_WHITELIST:append = " xilinx" 
+
+KERNEL_CLASSES:append = " kernel-fitimage"
+KERNEL_IMAGETYPES:append = " fitImage"
