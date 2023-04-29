@@ -1,5 +1,5 @@
 {
-    "image": "ghcr.io/cracked-machine/yocto_core:ubuntu2204",
+    "image": "ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204",
     "customizations": {
         "vscode": {
             "extensions": [
