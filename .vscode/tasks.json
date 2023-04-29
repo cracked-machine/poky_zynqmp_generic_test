@@ -9,10 +9,10 @@
     },
     "tasks": [
         {
-            "label": "build",
+            "label": "oe-init-build-env",
             "type": "shell",
             "command": [
-                "rm -rf ${workspaceFolder}/build/* &&",
+                // "rm -rf ${workspaceFolder}/build/* &&",
                 "cd ${workspaceFolder}/layers/poky &&",
                 "source oe-init-build-env ${workspaceFolder}/build &&",
                 "exec bash"
