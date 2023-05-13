@@ -1,5 +1,14 @@
 {
+
+    // https://github.com/cracked-machine/embedded_linux_dockerfiles
     "image": "ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204",
+    // force devcontainers to pull the newest version of the docker image before rebuilding the container.
+    "initializeCommand": "docker pull ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204",
+    "name": "yocto_xlnx:ubuntu2204",
+    "runArgs": [
+        "-hyocto_xlnx:ubuntu2204",
+        "-P"    // forward all ports
+    ],
     "customizations": {
         "vscode": {
             "extensions": [
@@ -8,5 +17,7 @@
                 "ms-python.python"
             ]
         }
-    }
+    },
+    "privileged": true,
+    "securityOpt": ["seccomp=unconfined"]
 }
