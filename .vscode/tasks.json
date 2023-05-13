@@ -9,16 +9,43 @@
     },
     "tasks": [
         {
-            "label": "oe-init-build-env",
+            "label": "Yocto: terminal",
             "type": "shell",
             "command": [
-                // "rm -rf ${workspaceFolder}/build/* &&",
                 "cd ${workspaceFolder}/layers/poky &&",
                 "source oe-init-build-env ${workspaceFolder}/build &&",
                 "exec bash"
+            ]
+        },
+        {
+            "label": "Yocto: build",
+            "type": "shell",
+            "command": [
+                "cd ${workspaceFolder}/layers/poky &&",
+                "source oe-init-build-env ${workspaceFolder}/build &&",
+                "time bitbake core-image-minimal"
             ],
-            "group": "build",           
-            "detail": "Use 'bitbake core-image-minimal' to build"
+            "problemMatcher": []
+        },
+        {
+            "label": "Yocto: testimage",
+            "type": "shell",
+            "command": [
+                "cd ${workspaceFolder}/layers/poky &&",
+                "source oe-init-build-env ${workspaceFolder}/build &&",
+                "time bitbake -c testimage core-image-minimal"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Yocto: qemu",
+            "type": "shell",
+            "command": [
+                "cd ${workspaceFolder}/layers/poky &&",
+                "source oe-init-build-env ${workspaceFolder}/build &&",
+                "runqemu custom slirp nographic"
+            ],
+            "problemMatcher": []
         }
     ]
 }
