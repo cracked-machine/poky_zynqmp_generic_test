@@ -14,7 +14,8 @@
             "extensions": [
                 "eugenwiens.bitbake",
                 "augustocdias.tasks-shell-input",
-                "ms-python.python"
+                "ms-python.python",
+                "microhobby.linuxkerneldev"
             ]
         }
     },
