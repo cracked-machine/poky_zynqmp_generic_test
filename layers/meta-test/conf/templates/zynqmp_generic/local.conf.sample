@@ -1,5 +1,5 @@
 
-MACHINE = "custom"
+MACHINE = "custom_dts"
 DISTRO ?= "poky"
 
 
