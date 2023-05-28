@@ -1,5 +1,12 @@
 build*
+sstate-cache*
 downloads
 sstate-cache
 .vscode-ctags
 *.pyc
+!*.xpr
+vivado/custom_zcu104/custom_zcu104.cache
+vivado/custom_zcu104/custom_zcu104.gen
+vivado/custom_zcu104/custom_zcu104.runs
+vivado/custom_zcu104/custom_zcu104.srcs
+*.lpr
