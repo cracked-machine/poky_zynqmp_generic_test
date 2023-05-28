@@ -1,0 +1,5 @@
+
+MACHINE = "zcu104"
+DISTRO ?= "poky"
+
+

@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "options": {
         "env": {
-            "TEMPLATECONF": "${workspaceFolder}/layers/meta-test/conf/templates/zynqmp_generic"
+            "TEMPLATECONF": "${workspaceFolder}/layers/meta-test/conf/templates/${input:bsp_selected}"
         }
     },
     "tasks": [
@@ -13,16 +13,17 @@
             "type": "shell",
             "command": [
                 "cd ${workspaceFolder}/layers/poky &&",
-                "source oe-init-build-env ${workspaceFolder}/build &&",
+                "source oe-init-build-env ${workspaceFolder}/build/${input:bsp_selected} &&",
                 "exec bash"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "Yocto: build",
             "type": "shell",
             "command": [
                 "cd ${workspaceFolder}/layers/poky &&",
-                "source oe-init-build-env ${workspaceFolder}/build &&",
+                "source oe-init-build-env ${workspaceFolder}/build/${input:bsp_selected} &&",
                 "time bitbake core-image-minimal"
             ],
             "problemMatcher": []
@@ -32,7 +33,7 @@
             "type": "shell",
             "command": [
                 "cd ${workspaceFolder}/layers/poky &&",
-                "source oe-init-build-env ${workspaceFolder}/build &&",
+                "source oe-init-build-env ${workspaceFolder}/build/${input:bsp_selected} &&",
                 "time bitbake -c testimage core-image-minimal"
             ],
             "problemMatcher": []
@@ -42,10 +43,22 @@
             "type": "shell",
             "command": [
                 "cd ${workspaceFolder}/layers/poky &&",
-                "source oe-init-build-env ${workspaceFolder}/build &&",
+                "source oe-init-build-env ${workspaceFolder}/build/${input:bsp_selected} &&",
                 "runqemu custom slirp nographic"
             ],
             "problemMatcher": []
         }
+    ],
+    "inputs": [
+        {
+            "id": "bsp_selected",
+            "type": "pickString",
+            "description": "Please select a BSP configuration",
+            "options": [
+                "custom_dts",
+                "custom_zcu104"
+            ]
+        }
     ]
+    
 }
