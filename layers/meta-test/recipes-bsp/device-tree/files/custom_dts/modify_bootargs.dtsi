@@ -1,0 +1,6 @@
+
+/ {
+	chosen {
+		bootargs = "earlycon dyndbg=\\\"func really_probe +p\\\"";
+	};
+};

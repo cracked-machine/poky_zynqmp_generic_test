@@ -1,5 +1,5 @@
 
-MACHINE = "zcu104"
+MACHINE = "custom_zcu104"
 DISTRO ?= "poky"
 
 

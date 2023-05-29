@@ -1,8 +1,0 @@
-/* 
-custom device tree overlay: layers/meta-test/conf/dts/zynqmp-custom.dtsi
-*/
-
-/ {
-
-    model = "ZynqMP Custom v0.1";
-};
