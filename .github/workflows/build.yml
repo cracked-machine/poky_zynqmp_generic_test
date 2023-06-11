@@ -19,13 +19,13 @@ jobs:
       
       - name: build linux 
         run: |
-          cd /_w/poky_zynqmp_generic_test/layers/poky
-          source oe-init-build-env /_w/poky_zynqmp_generic_test/build/custom_zcu104
+          cd layers/poky
+          source oe-init-build-env ../build/custom_zcu104
           bitbake core-image-minimal
 
       - name: Store artifacts
         uses: actions/upload-artifact@v3
         with:
           name: yocto_xlnx-${{ github.sha }}
-          path: /_w/poky_zynqmp_generic_test/build/tmp/deploy/images/qemu${{ matrix.arch }}/
+          path: ../build/tmp/deploy/images/qemu${{ matrix.arch }}/
           
