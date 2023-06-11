@@ -13,7 +13,7 @@ jobs:
     steps:
         # only v1 works within a self-hosted containerized actions-runner :(
       - name: Checkout repository
-      - uses: actions/checkout@v1
+        uses: actions/checkout@v1
         with:
           submodules: 'true'
 
