@@ -20,7 +20,7 @@ jobs:
           submodules: 'true'
 
       - name: print env
-        run: env && ls -la ${GITHUB_WORKSPACE}
+        run: env 
     
       - name: build linux 
         run: |
