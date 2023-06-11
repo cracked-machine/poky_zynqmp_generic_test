@@ -24,7 +24,7 @@ jobs:
     
       - name: build linux 
         run: |
-          cd ${GITHUB_WORKSPACE}/layers/poky
+          cd layers/poky
           . ./oe-init-build-env ../../build/custom_zcu104
           bitbake core-image-minimal
 
