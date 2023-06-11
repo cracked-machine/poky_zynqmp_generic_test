@@ -12,7 +12,10 @@ jobs:
       image: 'ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204'
     steps:
         # only v1 works within a self-hosted containerized actions-runner :(
+      - name: Checkout repository
       - uses: actions/checkout@v1
+        with:
+          submodules: 'true'
 
       - name: test
         run: ls -la & pwd
