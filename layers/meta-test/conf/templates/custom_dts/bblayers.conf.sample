@@ -6,12 +6,12 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-  /_w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/poky/meta \
-  /_w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/meta-xilinx/meta-xilinx-core \
-  /_w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/meta-xilinx/meta-xilinx-bsp \
-  /_w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/meta-xilinx/meta-xilinx-standalone \  
-  /_w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/meta-xilinx-tools \
-  /_w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/poky/meta-poky \
-  /_w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/poky/meta-yocto-bsp \
-  /_w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/meta-test \
+  ../../poky/meta \
+  ../../meta-xilinx/meta-xilinx-core \
+  ../../meta-xilinx/meta-xilinx-bsp \
+  ../../meta-xilinx/meta-xilinx-standalone \  
+  ../../meta-xilinx-tools \
+  ../../poky/meta-poky \
+  ../../poky/meta-yocto-bsp \
+  ../../meta-test \
   "
