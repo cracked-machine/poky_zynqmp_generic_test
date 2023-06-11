@@ -17,19 +17,19 @@ jobs:
         with:
           submodules: 'true'
 
-      - name: test
-        run: ls -la & pwd
-      
+      - name: print env
+        runs: env
+        
       - name: build linux 
         run: |
-          cd layers/poky
-          . ./oe-init-build-env ../build/custom_zcu104
-          ls -la
+          cd /_w/poky_zynqmp_generic_test/layers/poky
+          . /_w/poky_zynqmp_generic_test/oe-init-build-env ../build/custom_zcu104
           bitbake core-image-minimal
 
       - name: Store artifacts
         uses: actions/upload-artifact@v3
         with:
           name: yocto_xlnx-${{ github.sha }}
-          path: ../build/tmp/deploy/images/qemu${{ matrix.arch }}/
+          path: /_w/poky_zynqmp_generic_test/build/tmp/deploy/images/*
+          
           
