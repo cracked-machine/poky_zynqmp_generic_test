@@ -26,6 +26,7 @@ jobs:
       - name: build linux 
         run: |
           set -x
+          readlink -f /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/build/custom_zcu104
           cd ${GITHUB_WORKSPACE}/layers/poky
           . ./oe-init-build-env /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/build/custom_zcu104
           echo $(pwd)
