@@ -7,6 +7,8 @@ on:
 
 jobs:
   build:
+    env: 
+      TEMPLATECONF: ${GITHUB_WORKSPACE}/layers/meta-test/conf/templates/custom_dts
     runs-on: [self-hosted, linux]
     container:
       image: 'ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204'
@@ -23,6 +25,7 @@ jobs:
       - name: build linux 
         run: |
           set -x
+          echo ${TEMPLATECONF}
           echo ${GITHUB_WORKSPACE}
           cd ${GITHUB_WORKSPACE}/layers/poky
           echo ${GITHUB_WORKSPACE}/build/custom_zcu104
