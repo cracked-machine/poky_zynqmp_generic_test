@@ -6,12 +6,12 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-  ../../poky/meta \
-  ../../meta-xilinx/meta-xilinx-core \
-  ../../meta-xilinx/meta-xilinx-bsp \
-  ../../meta-xilinx/meta-xilinx-standalone \  
-  ../../meta-xilinx-tools \
-  ../../poky/meta-poky \
-  ../../poky/meta-yocto-bsp \
-  ../../meta-test \
+  ${GITHUB_WORKSPACE}/layers/poky/meta \
+  ${GITHUB_WORKSPACE}/layers/meta-xilinx/meta-xilinx-core \
+  ${GITHUB_WORKSPACE}/layers/meta-xilinx/meta-xilinx-bsp \
+  ${GITHUB_WORKSPACE}/layers/meta-xilinx/meta-xilinx-standalone \  
+  ${GITHUB_WORKSPACE}/layers/meta-xilinx-tools \
+  ${GITHUB_WORKSPACE}/layers/poky/meta-poky \
+  ${GITHUB_WORKSPACE}/layers/poky/meta-yocto-bsp \
+  ${GITHUB_WORKSPACE}/layers/meta-test \
   "
