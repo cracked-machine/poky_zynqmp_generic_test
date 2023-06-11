@@ -9,7 +9,6 @@ jobs:
   build:
     env: 
       TEMPLATECONF: /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/meta-test/conf/templates/custom_dts
-      BDIR: /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/build/custom_zcu104
     runs-on: [self-hosted, linux]
     container:
       image: 'ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204'
@@ -26,10 +25,10 @@ jobs:
       - name: build linux 
         run: |
           set -x
-          readlink -f /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/build/custom_zcu104
+          ls -la /_w
           cd ${GITHUB_WORKSPACE}/layers/poky
           . ./oe-init-build-env /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/build/custom_zcu104
-          echo $(pwd)
+          
       #     echo ${GITHUB_WORKSPACE}
       #     bitbake core-image-minimal
 
