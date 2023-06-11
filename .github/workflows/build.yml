@@ -22,8 +22,11 @@ jobs:
     
       - name: build linux 
         run: |
+          echo ${GITHUB_WORKSPACE}
           cd ${GITHUB_WORKSPACE}/layers/poky
+          echo ${GITHUB_WORKSPACE}
           . ./oe-init-build-env ${GITHUB_WORKSPACE}/build/custom_zcu104
+          echo ${GITHUB_WORKSPACE}
           bitbake core-image-minimal
 
       - name: Store artifacts
