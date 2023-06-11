@@ -26,6 +26,7 @@ jobs:
           cd ${GITHUB_WORKSPACE}/layers/poky
           echo ${GITHUB_WORKSPACE}
           . ./oe-init-build-env ${GITHUB_WORKSPACE}/build/custom_zcu104
+          echo $(pwd)
           echo ${GITHUB_WORKSPACE}
           bitbake core-image-minimal
 
