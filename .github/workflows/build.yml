@@ -13,7 +13,6 @@ jobs:
     steps:
         # only v1 works within a self-hosted containerized actions-runner :(
       - name: Checkout repository
-        uses: actions/cache@v1
         uses: actions/checkout@v1
         with:
           submodules: 'true'
@@ -22,6 +21,7 @@ jobs:
         run: env
 
       - name: build linux 
+        uses: actions/cache@v1
         run: |
           cd layers/poky
           . ./oe-init-build-env ../build/custom_zcu104
