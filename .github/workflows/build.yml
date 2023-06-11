@@ -25,9 +25,10 @@ jobs:
       - name: build linux 
         run: |
           set -x
-          ls -la ${PWD}
+          pwd
           cd ${GITHUB_WORKSPACE}/layers/poky
-          . ./oe-init-build-env /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/build/custom_zcu104
+          pwd
+          . ./oe-init-build-env ../../build/custom_zcu104
           
       #     echo ${GITHUB_WORKSPACE}
       #     bitbake core-image-minimal
