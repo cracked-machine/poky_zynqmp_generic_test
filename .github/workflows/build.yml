@@ -18,8 +18,8 @@ jobs:
           submodules: 'true'
 
       - name: print env
-        runs: env
-        
+        run: env
+
       - name: build linux 
         run: |
           cd /_w/poky_zynqmp_generic_test/layers/poky
