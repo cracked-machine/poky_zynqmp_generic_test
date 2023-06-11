@@ -20,11 +20,11 @@ jobs:
       - name: print env
         run: env
 
-      - name: Use cache
-        uses: actions/cache@v1
-        with:
-          path: ./build
-          key: poky_zynqmp_generic_test
+      # - name: Use cache
+      #   uses: actions/cache@v1
+      #   with:
+      #     path: ./build
+      #     key: poky_zynqmp_generic_test
 
       - name: build linux 
         run: |
