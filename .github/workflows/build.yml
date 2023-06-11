@@ -25,7 +25,7 @@ jobs:
       - name: build linux 
         run: |
           set -x
-          ls -la /_w
+          ls -la ${PWD}
           cd ${GITHUB_WORKSPACE}/layers/poky
           . ./oe-init-build-env /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/build/custom_zcu104
           
