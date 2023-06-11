@@ -23,7 +23,7 @@ jobs:
       - name: build linux 
         run: |
           cd layers/poky
-          . oe-init-build-env ../build/custom_zcu104
+          . ./oe-init-build-env ../build/custom_zcu104
           bitbake core-image-minimal
 
       - name: Store artifacts
