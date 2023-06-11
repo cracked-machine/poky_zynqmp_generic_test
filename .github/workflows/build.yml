@@ -13,6 +13,7 @@ jobs:
     steps:
         # only v1 works within a self-hosted containerized actions-runner :(
       - name: Checkout repository
+        uses: actions/cache@v1
         uses: actions/checkout@v1
         with:
           submodules: 'true'
@@ -27,7 +28,7 @@ jobs:
           bitbake core-image-minimal
 
       - name: Store artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v1
         with:
           name: yocto_xlnx-${{ github.sha }}
           path: ../build/tmp/deploy/images/*
