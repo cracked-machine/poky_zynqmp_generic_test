@@ -20,8 +20,13 @@ jobs:
       - name: print env
         run: env
 
-      - name: build linux 
+      - name: Use cache
         uses: actions/cache@v1
+        with:
+          path: ./build
+          key: poky_zynqmp_generic_test
+
+      - name: build linux 
         run: |
           cd layers/poky
           . ./oe-init-build-env ../build/custom_zcu104
