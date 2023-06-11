@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     env: 
-      TEMPLATECONF: ${GITHUB_WORKSPACE}/layers/meta-test/conf/templates/custom_dts
+      TEMPLATECONF: /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/meta-test/conf/templates/custom_dts
     runs-on: [self-hosted, linux]
     container:
       image: 'ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204'
@@ -25,19 +25,16 @@ jobs:
       - name: build linux 
         run: |
           set -x
-          echo ${TEMPLATECONF}
-          echo ${GITHUB_WORKSPACE}
           cd ${GITHUB_WORKSPACE}/layers/poky
-          echo ${GITHUB_WORKSPACE}/build/custom_zcu104
           . ./oe-init-build-env ../../build/custom_zcu104
           echo $(pwd)
-          echo ${GITHUB_WORKSPACE}
-          bitbake core-image-minimal
+      #     echo ${GITHUB_WORKSPACE}
+      #     bitbake core-image-minimal
 
-      - name: Store artifacts
-        uses: actions/upload-artifact@v1
-        with:
-          name: yocto_xlnx-${{ github.sha }}
-          path: ./build/custom_zcu104/tmp/deploy/images/*
+      # - name: Store artifacts
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: yocto_xlnx-${{ github.sha }}
+      #     path: ./build/custom_zcu104/tmp/deploy/images/*
           
           
