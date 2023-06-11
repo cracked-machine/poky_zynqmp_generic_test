@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: [self-hosted, linux]
     container:
-      image: 'ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204'
+      image: 'ghcr.io/cracked-machine/yocto_imx:ubuntu2204'
     steps:
         # only v1 works within a self-hosted containerized actions-runner :(
       - uses: actions/checkout@v1
