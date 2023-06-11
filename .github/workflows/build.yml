@@ -18,7 +18,10 @@ jobs:
           submodules: 'true'
 
       - name: print env
-        run: env
+        run: env && ls -la ${GITHUB_WORKSPACE}
+      
+      - name: test absolute
+        run: ls -la /home/chris/poky_zynqmp_generic_test/poky_zynqmp_generic_test/
 
       # - name: Use cache
       #   uses: actions/cache@v1
@@ -29,13 +32,13 @@ jobs:
       - name: build linux 
         run: |
           cd layers/poky
-          . ./oe-init-build-env ../build/custom_zcu104
+          . ./oe-init-build-env ../../build/custom_zcu104
           bitbake core-image-minimal
 
       - name: Store artifacts
         uses: actions/upload-artifact@v1
         with:
           name: yocto_xlnx-${{ github.sha }}
-          path: ../build/tmp/deploy/images/*
+          path: ../../build/custom_zcu104/tmp/deploy/images/*
           
           
