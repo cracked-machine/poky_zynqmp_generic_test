@@ -24,14 +24,9 @@ jobs:
     
       - name: build linux 
         run: |
-          set -x
-          pwd
           cd ${GITHUB_WORKSPACE}/layers/poky
-          pwd
           . ./oe-init-build-env ../../build/custom_zcu104
-          
-      #     echo ${GITHUB_WORKSPACE}
-      #     bitbake core-image-minimal
+          bitbake core-image-minimal
 
       # - name: Store artifacts
       #   uses: actions/upload-artifact@v1
