@@ -11,13 +11,21 @@ jobs:
     container:
       image: 'ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204'
     steps:
-      - name: Check out code
-        uses: actions/checkout@v3
+        # only v1 works within a self-hosted containerized actions-runner :(
+      - name: checkout  
+        uses: actions/checkout@v1
+        run: env && pwd
+      
       # - name: build linux 
       #   run: |
-      #     cd /_w/poky_zynqmp_generic_test/layers/poky
-      #     source oe-init-build-env /_w/build/custom_zcu104
+      #     cd poky_zynqmp_generic_test/layers/poky
+      #     source oe-init-build-env ../build/custom_zcu104
       #     bitbake core-image-minimal
+      # - name: Store artifacts
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: yocto_xlnx-${{ github.sha }}
+      #     path: ./build/tmp/deploy/images/qemu${{ matrix.arch }}/
       # - name: Archive production artifacts
       # uses: actions/upload-artifact@v3
       # with:
