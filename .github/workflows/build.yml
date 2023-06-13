@@ -28,7 +28,7 @@ jobs:
     
       - name: build linux 
         run: |
-          mkdir ${GITHUB_WORKSPACE}/build/custom_zcu104
+          mkdir -p ${GITHUB_WORKSPACE}/build/custom_zcu104
           cd layers/poky
           source ./oe-init-build-env ${GITHUB_WORKSPACE}/build/custom_zcu104
           echo ${PWD}
