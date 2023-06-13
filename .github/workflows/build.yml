@@ -13,7 +13,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: build-custom-dts
+
     # container:
     #   image: 'ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204'
     steps:
