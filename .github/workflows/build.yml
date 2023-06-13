@@ -23,8 +23,8 @@ jobs:
         with:
           submodules: 'true'
 
-      - name: print env
-        run: env 
+      # - name: print env
+      #   run: env 
     
       - name: build linux 
         run: |
