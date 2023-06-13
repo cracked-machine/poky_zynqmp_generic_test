@@ -6,10 +6,14 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build-custom-dts:
     env: 
       TEMPLATECONF: /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/meta-test/conf/templates/custom_dts
     runs-on: [self-hosted, linux]
+  defaults:
+    run:
+      shell: bash
+      working-directory: build-custom-dts
     container:
       image: 'ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204'
     steps:
@@ -26,7 +30,8 @@ jobs:
         run: |
           echo ${GITHUB_WORKSPACE}
           cd layers/poky
-          . ./oe-init-build-env ../../build/custom_zcu104
+          source ./oe-init-build-env ../../build/custom_zcu104
+          echo ${PWD}
           bitbake core-image-minimal
 
       # - name: Store artifacts
