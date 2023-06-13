@@ -25,17 +25,14 @@ jobs:
 
       - name: print env
         run: env
-
-      - name: print_hello
-        run: echo "hello"
     
-      # - name: build linux 
-      #   run: |
-      #     echo ${GITHUB_WORKSPACE}
-      #     cd layers/poky
-      #     source ./oe-init-build-env ../../build/custom_zcu104
-      #     echo ${PWD}
-      #     # bitbake core-image-minimal
+      - name: build linux 
+        run: |
+          echo ${GITHUB_WORKSPACE}
+          cd layers/poky
+          source ./oe-init-build-env ../../build/custom_zcu104
+          echo ${PWD}
+          # bitbake core-image-minimal
 
       # - name: Store artifacts
       #   uses: actions/upload-artifact@v1
