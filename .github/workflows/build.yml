@@ -10,9 +10,9 @@ jobs:
     env: 
       TEMPLATECONF: /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/meta-test/conf/templates/custom_dts
     runs-on: [self-hosted, linux]
-  defaults:
-    run:
-      shell: bash
+    defaults:
+      run:
+        shell: bash
       working-directory: build-custom-dts
     container:
       image: 'ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204'
