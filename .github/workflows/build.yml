@@ -24,6 +24,9 @@ jobs:
           submodules: 'true'
 
       - name: print env
+        run: env
+
+      - name print_hello
         run: echo "hello"
     
       # - name: build linux 
