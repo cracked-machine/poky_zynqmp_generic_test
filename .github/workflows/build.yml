@@ -28,9 +28,9 @@ jobs:
     
       - name: build linux 
         run: |
-          echo ${GITHUB_WORKSPACE}
+          mkdir ${GITHUB_WORKSPACE}/build/custom_zcu104
           cd layers/poky
-          source ./oe-init-build-env ../../build/custom_zcu104
+          source ./oe-init-build-env ${GITHUB_WORKSPACE}/build/custom_zcu104
           echo ${PWD}
           # bitbake core-image-minimal
 
