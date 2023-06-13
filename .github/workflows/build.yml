@@ -7,8 +7,8 @@ on:
 
 jobs:
   build-custom-dts:
-    env: 
-      TEMPLATECONF: /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/meta-test/conf/templates/custom_dts
+    # env: 
+    #   TEMPLATECONF: /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/meta-test/conf/templates/custom_dts
     runs-on: [self-hosted, linux]
     defaults:
       run:
@@ -32,7 +32,7 @@ jobs:
           cd layers/poky
           source ./oe-init-build-env ../../build/custom_zcu104
           echo ${PWD}
-          bitbake core-image-minimal
+          # bitbake core-image-minimal
 
       # - name: Store artifacts
       #   uses: actions/upload-artifact@v1
