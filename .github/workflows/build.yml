@@ -14,8 +14,8 @@ jobs:
       run:
         shell: bash
         working-directory: build-custom-dts
-    container:
-      image: 'ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204'
+    # container:
+    #   image: 'ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204'
     steps:
         # only v1 works within a self-hosted containerized actions-runner :(
       - name: Checkout repository
