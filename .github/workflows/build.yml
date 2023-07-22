@@ -7,8 +7,6 @@ on:
 
 jobs:
   build-custom-dts:
-    # env: 
-    #   TEMPLATECONF: /__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test/layers/meta-test/conf/templates/custom_dts
     runs-on: [self-hosted, linux]
     defaults:
       run:
@@ -33,11 +31,7 @@ jobs:
           source ./oe-init-build-env ${GITHUB_WORKSPACE}/build/custom_zcu104
           echo ${PWD}
           bitbake core-image-minimal
+          bitbake core-image-minimal -c populate_sdk_ext
 
-      # - name: Store artifacts
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: yocto_xlnx-${{ github.sha }}
-      #     path: ./build/custom_zcu104/tmp/deploy/images/*
-          
+     
           
