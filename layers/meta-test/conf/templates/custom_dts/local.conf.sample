@@ -1,5 +1,7 @@
 
 MACHINE = "custom_dts"
 DISTRO ?= "poky"
+SDK_INCLUDE_NATIVESDK = 1
+# SDK_INCLUDE_PKGDATA = 1
 
 
