@@ -3,7 +3,7 @@
     // https://github.com/cracked-machine/embedded_linux_dockerfiles
     "image": "ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204",
     // force devcontainers to pull the newest version of the docker image before rebuilding the container.
-    "initializeCommand": "docker pull ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204",
+    // "initializeCommand": "docker pull ghcr.io/cracked-machine/yocto_xlnx:ubuntu2204",
     "name": "yocto_xlnx:ubuntu2204",
     "runArgs": [
         "-hyocto_xlnx:ubuntu2204",
@@ -20,5 +20,9 @@
         }
     },
     "privileged": true,
-    "securityOpt": ["seccomp=unconfined"]
+    "securityOpt": ["seccomp=unconfined"],
+    // The paths in source/workspaceFolder and build/custom_dts/conf/bblayers.conf must match the path used on the CI environment,
+    // this way Yocto will work with the same config files both locally and on CI.
+    "workspaceMount": "source=${localWorkspaceFolder},target=/__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test,type=bind,consistency=cached",
+    "workspaceFolder": "/__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test"
 }

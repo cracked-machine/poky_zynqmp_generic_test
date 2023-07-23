@@ -12,6 +12,7 @@
             "label": "Yocto: terminal",
             "type": "shell",
             "command": [
+                "mkdir -p ${workspaceFolder}/build &&",
                 "cd ${workspaceFolder}/layers/poky &&",
                 "source oe-init-build-env ${workspaceFolder}/build/${input:bsp_selected} &&",
                 "exec bash"
@@ -22,6 +23,7 @@
             "label": "Yocto: build",
             "type": "shell",
             "command": [
+                "mkdir -p ${workspaceFolder}/build &&",
                 "cd ${workspaceFolder}/layers/poky &&",
                 "source oe-init-build-env ${workspaceFolder}/build/${input:bsp_selected} &&",
                 "time bitbake core-image-minimal"
@@ -32,6 +34,7 @@
             "label": "Yocto: testimage",
             "type": "shell",
             "command": [
+                "mkdir -p ${workspaceFolder}/build &&",
                 "cd ${workspaceFolder}/layers/poky &&",
                 "source oe-init-build-env ${workspaceFolder}/build/${input:bsp_selected} &&",
                 "time bitbake -c testimage core-image-minimal"
@@ -42,6 +45,7 @@
             "label": "Yocto: qemu",
             "type": "shell",
             "command": [
+                "mkdir -p ${workspaceFolder}/build &&",
                 "cd ${workspaceFolder}/layers/poky &&",
                 "source oe-init-build-env ${workspaceFolder}/build/${input:bsp_selected} &&",
                 "runqemu custom slirp nographic"
