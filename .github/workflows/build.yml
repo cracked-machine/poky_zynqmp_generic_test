@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir -p ${GITHUB_WORKSPACE}/build/custom_zcu104
           cd layers/poky
-          source ./oe-init-build-env ${GITHUB_WORKSPACE}/build/custom_zcu104
+          source ./oe-init-build-env ${GITHUB_WORKSPACE}/build/custom_dts
           echo ${PWD}
           bitbake core-image-minimal
           bitbake core-image-minimal -c populate_sdk_ext
