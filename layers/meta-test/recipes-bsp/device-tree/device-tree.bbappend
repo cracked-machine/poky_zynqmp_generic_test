@@ -1,6 +1,8 @@
+include avnet_zub1cg.inc
 
 # "custom_dts" bsp - patch Xilinx DTG with our custom board overlay so it can be selected using 
 # YAML_DT_BOARD_FLAGS and MACHINEOVERRIDES in the machine conf. e.g. layers/meta-test/conf/machine/custom_dts.conf
+
 
 BOARD_OVERLAY_DTSI:custom_dts = "board_overlay.dtsi"
 MODIFY_BOOTARGS_DTSI:custom_dts = "modify_bootargs.dtsi"

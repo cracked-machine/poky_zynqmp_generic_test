@@ -59,6 +59,7 @@
             "type": "pickString",
             "description": "Please select a BSP configuration",
             "options": [
+                "avnet_zub1cg",
                 "custom_dts",
                 "custom_zcu104"
             ]

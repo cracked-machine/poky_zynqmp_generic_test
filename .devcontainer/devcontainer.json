@@ -15,7 +15,10 @@
                 "eugenwiens.bitbake",
                 "augustocdias.tasks-shell-input",
                 "ms-python.python",
-                "microhobby.linuxkerneldev"
+                "microhobby.linuxkerneldev",
+                "rashwell.tcl", 
+                "bierner.markdown-mermaid",
+                "mads-hartmann.bash-ide-vscode"
             ]
         }
     },
@@ -24,5 +27,5 @@
     // The paths in source/workspaceFolder and build/custom_dts/conf/bblayers.conf must match the path used on the CI environment,
     // this way Yocto will work with the same config files both locally and on CI.
     "workspaceMount": "source=${localWorkspaceFolder},target=/__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test,type=bind,consistency=cached",
-    "workspaceFolder": "/__w/poky_zynqmp_generic_test/poky_zynqmp_generic_test"
+    "workspaceFolder": "/workspaces/poky_zynqmp_generic_test/poky_zynqmp_generic_test"
 }

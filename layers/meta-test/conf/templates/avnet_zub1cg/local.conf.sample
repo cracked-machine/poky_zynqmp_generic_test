@@ -1,0 +1,5 @@
+
+MACHINE = "avnet_zub1cg"
+DISTRO ?= "poky"
+
+
